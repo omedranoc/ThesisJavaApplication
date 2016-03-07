@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="connection.driver_class">
+			oracle.jdbc.driver.OracleDriver
+		</property>
+		<property name="connection.url">
+			jdbc:oracle:thin:@localhost:1521:xe
+		</property>
+		<property name="connection.username">
+			admin
+		</property>
+		<property name="connection.password">
+			admin
+		</property>
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.Oracle10gDialect
+		</property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">false</property>
+		<property name="hbm2ddl.auto">create</property>
+	
+		<mapping class="edu.umbc.thesis.domain.Experiment" />
+		<mapping class="edu.umbc.thesis.domain.ResultExperiment" />
+		<mapping class="edu.umbc.thesis.domain.Classifierw" />
+		<mapping class="edu.umbc.thesis.domain.DataFile" />
+		<mapping class="edu.umbc.thesis.domain.DataSet" />
+		<mapping class="edu.umbc.thesis.domain.NumNegPos" />
+	</session-factory>
+</hibernate-configuration>
